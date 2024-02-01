@@ -13,3 +13,5 @@ pipeline {
                 // pasos para construir la aplicación
             }
         }
+    }
+}
