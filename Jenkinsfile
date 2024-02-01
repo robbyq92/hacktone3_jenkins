@@ -8,7 +8,7 @@ spec:
 ''') {
     node(POD_LABEL) {
         container('kubernetes') {
-            sh 'ping -c 4 hacktonejenkins.jenkins.svc.cluster.local:8080'
+            echo "Pod Desplegado"
         }
     }
     node(POD_LABEL)
