@@ -10,7 +10,7 @@ pipeline {
             }
             steps {
                 echo 'Building...'
-                // pasos para construir la aplicación
+                // Pasos deseados para constuir la aplicación. 
             }
         }
     }
