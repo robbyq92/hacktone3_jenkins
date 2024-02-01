@@ -6,7 +6,7 @@ spec:
   - name: kubernetes
     image: paulbouwer/hello-kubernetes:1.8
 ''') {
-    node('minikube') {
+    node(minikube) {
         container('kubernetes') {
             echo "Pod Desplegado"
         }
@@ -17,3 +17,4 @@ spec:
            sh "curl hacktonejenkins.jenkins.svc.cluster.local:8080"
        }
     }
+}
