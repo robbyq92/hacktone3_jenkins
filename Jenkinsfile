@@ -3,18 +3,13 @@ apiVersion: v1
 kind: Pod
 spec:
   containers:
-  - name: kubernetes
+  - name: hello-k8
     image: paulbouwer/hello-kubernetes:1.8
 ''') {
-    node(minikube) {
-        container('kubernetes') {
-            echo "Pod Desplegado"
+    node(POD_LABEL) {
+        container('hello-k8') {
+           echo POD_CONTAINER
+           sh 'hostname'
         }
-    }
-    node(minikube)
-    stage('Comprobando el POD') {
-       container('kubernetes') {
-           sh "curl hacktonejenkins.jenkins.svc.cluster.local:8080"
-       }
     }
 }
