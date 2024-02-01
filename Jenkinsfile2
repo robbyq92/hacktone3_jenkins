@@ -1,0 +1,15 @@
+pipeline {
+    agent none 
+    stages {
+        stage('Build') {
+            agent {
+                kubernetes {
+                    label 'build-agent' // Nombre del agente que se creará en el Kubernetes
+                    yamlFile './Jenkins-agent-pod.yaml' // Ajustar la ruta al archivo YAML del template de pod
+                }
+            }
+            steps {
+                echo 'Building...'
+                // pasos para construir la aplicación
+            }
+        }
