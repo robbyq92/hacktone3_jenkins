@@ -17,4 +17,3 @@ spec:
            sh "curl hacktonejenkins.jenkins.svc.cluster.local:8080"
        }
     }
-}
